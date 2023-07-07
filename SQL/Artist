@@ -1,0 +1,121 @@
+/* I made 3 tables about artist and used commands to join and merge the data */
+CREATE TABLE Artist (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Fullname text,
+    age integer);
+
+INSERT INTO Artist
+    VALUES (1, "Elton John", 76);
+INSERT INTO Artist
+    VALUES (2, "Taylor Swift", 33);
+INSERT INTO Artist
+    VALUES (3, "Katy Perry", 38);
+INSERT INTO Artist
+    VALUES (4, "Justin Bieber", 29);
+INSERT INTO Artist
+    VALUES (5, "Ariana Grande", 30);
+INSERT INTO Artist
+    VALUES (6, "The Weeknd", 33);
+INSERT INTO Artist
+    VALUES (7, "Bruno Mars", 37);
+INSERT INTO Artist
+    VALUES (8, "Billy Joel", 74);
+INSERT INTO Artist
+    VALUES (9, "Harry Styles", 29);
+    
+CREATE TABLE Songs (
+    artist_id integer,
+    Song TEXT,
+    album TEXT,
+    year INTEGER,
+    artist_id2 INTEGER);
+    
+INSERT INTO Songs
+    VALUES (1, "Rocket Man", "Honkey Chateau", 1972, 1);
+INSERT INTO Songs
+    VALUES (1, "I'm Still Standing", "Too Low for Zero", 1983, NULL);
+INSERT INTO Songs
+    VALUES (2, "Bad Blood", "1989", 2014, 2);
+INSERT INTO Songs
+    VALUES (2, "I Knew You Were Trouble", "Red", 2012, NULL);
+INSERT INTO Songs
+    VALUES (3, "Last Friday Night", "Teenage Dream", 2010, 3);
+INSERT INTO Songs
+    VALUES (3, "California Gurls", "Teenage Dream", 2010, NULL);
+INSERT INTO Songs
+    VALUES (3, "Hot N COld", "One of the Boys", 2008, NULL);
+INSERT INTO Songs
+    VALUES (4, "Baby", "My World 2.0", 2010, 4);
+INSERT INTO Songs
+    VALUES (4, "Beauty and a beat", "Believe", 2012, NULL);
+INSERT INTO Songs
+    VALUES (4, "What Do You Mean?", "Purpose", 2015, NULL);
+INSERT INTO Songs
+    VALUES (5, "Positions", "Positions", 2020, 5);
+INSERT INTO Songs
+    VALUES (5, "Dangerous Woman", "Dangerous Woman", 2016, NULL);
+INSERT INTO Songs
+    VALUES (5, "34+35", "Positions", 2020, NULL);
+INSERT INTO Songs
+    VALUES (6, "Save Your Tears", "After Hours", 2020, 6);
+INSERT INTO Songs
+    VALUES (6, "Die For You", "Starboy", 2016, 6);
+INSERT INTO Songs
+    VALUES (7, "Locked Out of Heaven", "Unorthodox Jukebox", 2012, 7);
+INSERT INTO Songs
+    VALUES (7, "Talking to the Moon", "Doo-Wops & Hooligans", 2010, null);
+INSERT INTO Songs
+    VALUES (8, "Uptown Girl", "An Innocent Man", 1983, 8);
+INSERT INTO Songs
+    VALUES (8, "Piano Man", "Piano Man", 1973, null);
+INSERT INTO Songs
+    VALUES (9, "As it Was", "Harry's House", 2022, 9);
+INSERT INTO Songs
+    VALUES (9, "Golden", "Fine Line", 2019, null);
+INSERT INTO Songs
+    VALUES (9, "Sign of the Times", "Harry Styles", 2017, NULL);
+
+CREATE TABLE wherefrom (
+    Where_id integer,
+    Where_from TEXT);
+    
+INSERT INTO wherefrom
+    VALUES (1, "United Kingdom");
+INSERT INTO wherefrom
+    VALUES (2, "Pennsylvania");
+INSERT INTO wherefrom
+    VALUES (3, "California");
+INSERT INTO wherefrom
+    VALUES (4, "Canada");
+INSERT INTO wherefrom
+    VALUES (5, "Florida");
+INSERT INTO wherefrom
+    VALUES (6, "Canada");
+INSERT INTO wherefrom
+    VALUES (7, "Hawaii");
+INSERT INTO wherefrom
+    VALUES (8, "New York");
+INSERT INTO wherefrom
+    VALUES (9, "United Kingdom");
+    
+
+SELECT Artist.Fullname, Songs.song, Songs.album
+FROM Artist
+JOIN Songs
+ON Artist.id = Songs.artist_id
+order by Artist.Fullname;
+
+SELECT Artist.Fullname, Artist.age, wherefrom.Where_from
+from Artist
+Join wherefrom
+on artist.id =wherefrom.where_id
+order by artist.age;
+
+
+SELECT  Artist.Fullname, Songs.Song, wherefrom.Where_from
+FROM Artist
+JOIN Songs
+ON  Artist.id = Songs.artist_id2
+JOIN wherefrom
+on Artist.id =wherefrom.where_id
+ORDER BY Artist.Fullname;
