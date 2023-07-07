@@ -1,0 +1,3 @@
+birthdate = input ("what year wear you born in? ")
+Age = 2023 - int(birthdate)
+print ('your age is: ' + str(Age))

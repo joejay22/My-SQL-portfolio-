@@ -1,0 +1,5 @@
+digits1 = input ('integer ')
+digits2 = input ('multiply by ')
+product = float(digits1) * float(digits2)
+
+print('the product is: ' + str(product))

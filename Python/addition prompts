@@ -1,0 +1,4 @@
+digits1 = input ('addition ')
+digits2 = input ('add to it ')
+sum = float(digits1) + float(digits2)
+print('the total is: ' + str(sum))
