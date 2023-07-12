@@ -1,0 +1,10 @@
+temp = input('Temperature: ')
+temp2 = int(temp)
+Deg = input("Fahrenheit or Celsius: ")
+
+if Deg.upper() == "F" or "Fahrenheit":
+    Celsius = int(round((temp2 - 32) * 5 / 9))
+    print("temp in celsius converted: " + str(Celsius))
+else:
+        Fahrenheit = int(round((9 * temp2) / 5 + 32))
+        print ('temperature in fahrenheit: ' + str(Fahrenheit))
