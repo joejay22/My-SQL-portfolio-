@@ -1,3 +1,4 @@
+/* I used github to pull data on the top 100 movies and broke it down based on how worldwide compared to overseas or domestic and even the studio */
 CREATE TABLE topmovies(
    Rank        INTEGER,
    Title       TEXT,
@@ -127,7 +128,7 @@ select Title, Worldwide from topmovies where Title like "%star war%" order by Wo
 select avg(Worldwide) as "avg starWars worldwide" from topmovies where Title like "%star war%"; 
 
 select count(distinct Year) as "differing years" from topmovies;
-
+/* I was curious so I played into the time periods */
 select COUNT(*), 
     CASE
         when Year < 2000 then "before 2000"
@@ -139,6 +140,7 @@ select COUNT(*),
 from topmovies
 group by "era";
 
+/* I wanted to see how they performed in eacch so I used the and & or functions to compare and see how it played into worldwide */
 select Title as "over 800 either domestic or overseas"  from topmovies where Domestic > 800 or Overseas > 800;
 
 select Title as "over 600 either domestic and overseas"  from topmovies where Domestic > 600 and Overseas > 600; 
@@ -147,10 +149,14 @@ select Title as "over 1600 worldwide" from topmovies where Worldwide > 1600;
 
 select Title, Studio  from topmovies where Studio in ("Fox", "Uni.", "WB") order by Studio;
 
+
+
 select count(distinct Studio) from topmovies;
 
 Select distinct(Studio) from topmovies;
 
+/* this chart helped highlight that buena vista pictures takes the cake having 
+the most films in the top 100 and allows us to see where the rest follows  */
 select count(*),
     CASE
         when Studio = "Fox" then "Fox"

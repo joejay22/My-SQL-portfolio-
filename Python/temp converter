@@ -1,3 +1,5 @@
+#now this took me a solid minute, I made it so it'll ask for the temperature and whether it is Fahrenheit or Celsius
+#once you have answered both prompts itll go even further to convert either or to the opposite 
 temp = input('Temperature: ')
 temp2 = int(temp)
 Deg = input("Fahrenheit or Celsius: ")

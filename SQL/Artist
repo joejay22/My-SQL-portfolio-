@@ -1,4 +1,4 @@
-/* I made 3 tables about artist and used commands to join and merge the data */
+/* I made 3 tables about artist  from scratch pulling in their popular songs and used commands to join and merge the data */
 CREATE TABLE Artist (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Fullname text,
@@ -111,7 +111,7 @@ Join wherefrom
 on artist.id =wherefrom.where_id
 order by artist.age;
 
-
+/* here you can see I played with combinging both of the tables to give data I wanted */
 SELECT  Artist.Fullname, Songs.Song, wherefrom.Where_from
 FROM Artist
 JOIN Songs

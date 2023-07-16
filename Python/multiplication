@@ -1,3 +1,4 @@
+#I made a multiplication calculator when you run it itll ask for your integers and itll calculate
 digits1 = input ('integer ')
 digits2 = input ('multiply by ')
 product = float(digits1) * float(digits2)

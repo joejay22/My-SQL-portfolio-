@@ -1,3 +1,4 @@
+/* I updated the name and deleted a whole entry  */
 CREATE table documents (
 
     id INTEGER PRIMARY KEY AUTOINCREMENT,

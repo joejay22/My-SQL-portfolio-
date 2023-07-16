@@ -1,3 +1,5 @@
+#This was my first project and I wanted to mess with prompts to math so I made this
+#once you run the ccode itll ask for your birthyear and calculate your age
 birthdate = input ("what year wear you born in? ")
 Age = 2023 - int(birthdate)
 print ('your age is: ' + str(Age))
